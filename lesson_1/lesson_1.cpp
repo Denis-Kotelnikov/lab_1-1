@@ -1,18 +1,23 @@
-﻿#include <iostream>
-void main(void)
+#include <iostream> 
+using namespace std;
+
+void main(void) 
 {
-	int i, k;
-	int power(int, int);
-	for (i = 0; i < 10; i++)
+	// задаем исходные данные: i для цикла, k для хранения результата функции power, num для ввода числа
+	int i, k, num; 
+	cout << "Enter number: "; 
+	cin >> num; // Считываем введенное число и сохраняем его в переменной num
+	int power(int, int); // Объявляем прототип функции power, которая будет вычислять степень числа
+	for (i = 0; i < 10; i++) 
 	{
-		k = power(2, i);
-		cout<<"i = "<<i<<", k = "<<k<<end1;
+		k = power(num, i); // Вызываем функцию power,результат сохраняем в k
+		cout << "i = " << i << ", k = " << k << endl; // Выводим i и k
 	}
 }
 
-int power(int x, int n)
+int power(int x, int n) // Функция power, которая принимает два аргумента: x (основание) и n (степень)
 {
-	int i, p = 1;
-	for (i = 1; i < n; i++) p *= x;
-	return p;
+	int i, p = 1; // Объявляем переменные: i для цикла и p для хранения результата 
+	for (i = 0; i < n; i++) p *= x; // Умножаем p на x n раз
+	return p; // Возвращаем результат возведения x в степень n
 }
